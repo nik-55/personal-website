@@ -1,9 +1,8 @@
-'use client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import { Cedarville_Cursive } from 'next/font/google';
-import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
+import JsLoader from '@/components/JsLoader';
 
 const inter = Cedarville_Cursive({
   subsets: ['latin'],
@@ -17,14 +16,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
   return (
     <html lang='en'>
       <body className={inter.className}>
         <Navbar />
         <div style={{ marginTop: '60px' }}>{children}</div>
+        <JsLoader />
       </body>
     </html>
   );
