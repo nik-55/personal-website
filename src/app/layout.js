@@ -1,11 +1,15 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Cedarville_Cursive } from 'next/font/google';
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Cedarville_Cursive({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'normal',
+});
 
 export const metadata = {
   title: 'Nikhil Mahajan',

@@ -1,5 +1,6 @@
 import profile_img from '@/assets/images/profile.jpg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
@@ -43,15 +44,23 @@ const Navbar = () => {
               id='offcanvasNavbarLabel'
             />
             <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
-              <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
+              <li
+                className='nav-item'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
+              >
+                <Link className='nav-link active' aria-current='page' href='/'>
                   Home
-                </a>
+                </Link>
               </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  Link
-                </a>
+              <li
+                className='nav-item'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
+              >
+                <Link className='nav-link' href='/about'>
+                  About
+                </Link>
               </li>
               <li className='nav-item dropdown'>
                 <a
