@@ -1,10 +1,10 @@
+import profile_img from '@/assets/images/profile.jpg';
+import Image from 'next/image';
+
 const Navbar = () => {
   return (
     <nav className='navbar bg-body-tertiary fixed-top'>
       <div className='container-fluid'>
-        <a className='navbar-brand' href='#'>
-          Offcanvas navbar
-        </a>
         <button
           className='navbar-toggler'
           type='button'
@@ -15,16 +15,17 @@ const Navbar = () => {
         >
           <span className='navbar-toggler-icon'></span>
         </button>
+        <a className='navbar-brand' href='/'>
+          Nikhil Mahajan
+        </a>
         <div
-          className='offcanvas offcanvas-end'
+          className='offcanvas offcanvas-start'
+          style={{ width: '250px' }}
           tabIndex='-1'
           id='offcanvasNavbar'
           aria-labelledby='offcanvasNavbarLabel'
         >
-          <div className='offcanvas-header'>
-            <h5 className='offcanvas-title' id='offcanvasNavbarLabel'>
-              Offcanvas
-            </h5>
+          <div className='offcanvas-header d-flex justify-content-end'>
             <button
               type='button'
               className='btn-close'
@@ -33,6 +34,14 @@ const Navbar = () => {
             ></button>
           </div>
           <div className='offcanvas-body'>
+            <Image
+              src={profile_img}
+              className='border border-dark'
+              width={200}
+              height={200}
+              alt='Nikhil Mahajan'
+              id='offcanvasNavbarLabel'
+            />
             <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
               <li className='nav-item'>
                 <a className='nav-link active' aria-current='page' href='#'>
@@ -76,17 +85,6 @@ const Navbar = () => {
                 </ul>
               </li>
             </ul>
-            <form className='d-flex mt-3' role='search'>
-              <input
-                className='form-control me-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-              />
-              <button className='btn btn-outline-success' type='submit'>
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </div>
