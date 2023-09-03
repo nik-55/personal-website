@@ -7,6 +7,7 @@ async function getData() {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
       },
+      cache: 'no-store',
     }
   );
   // The return value is *not* serialized
