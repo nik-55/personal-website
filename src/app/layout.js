@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={inter.className}>
         <Navbar />
-        <div style={{ marginTop: '60px' }}>{children}</div>
+        <div style={{ marginTop: '100px' }}>{children}</div>
         <JsLoader />
       </body>
     </html>
