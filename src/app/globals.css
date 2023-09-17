@@ -23,3 +23,18 @@ body {
   align-items: center;
   z-index: 9999;
 }
+
+.blogs-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2em;
+  column-gap: 2em;
+  justify-items: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 860px) {
+  .blogs-container {
+    grid-template-columns: 1fr;
+  }
+}

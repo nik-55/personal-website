@@ -17,7 +17,6 @@ export default function NotionRender({ recordMap }) {
     <div className='bg-secondary'>
       <NotionRenderer
         recordMap={recordMap}
-        fullPage={false}
         darkMode={false}
         components={{
           Code,

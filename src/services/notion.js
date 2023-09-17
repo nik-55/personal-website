@@ -6,7 +6,7 @@ const notion = new Client({
 });
 const notionx = new NotionAPI();
 
-async function notionDbQuery(database_name) {
+async function notionDbQuery(database_name, filter) {
   const res = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DB,
     filter: {
@@ -20,6 +20,7 @@ async function notionDbQuery(database_name) {
   const database_id = res.results[0].properties.db_id.rich_text[0].plain_text;
   const data = await notion.databases.query({
     database_id,
+    filter,
   });
   return data.results;
 }
