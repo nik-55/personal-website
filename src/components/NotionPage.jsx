@@ -1,27 +1,16 @@
-'use client';
-import * as React from 'react'
-import { NotionRenderer } from 'react-notion-x';
-import dynamic from 'next/dynamic'
+import { notionx } from '@/services/notion';
+import NotionRender from './NotionRender';
 
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code)
-)
+async function notionpage(id) {
+  const recordMap = await notionx.getPage(id);
+  return recordMap;
+}
 
-const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
-)
-
-
-export default function NotionPage({ recordMap}) {
-
+export default async function NotionPage({ id }) {
+  const recordMap = await notionpage(id);
   return (
-    <div className="bg-secondary">
-      <NotionRenderer recordMap={recordMap} fullPage={false} darkMode={false} components={{
-      Code,
-        Collection,
-    }}
-/>
-    </div>)
+    <div className='bg-secondary'>
+      <NotionRender recordMap={recordMap} />
+    </div>
+  );
 }

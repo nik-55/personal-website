@@ -1,27 +1,6 @@
-'use client';
-import profile_img from '@/assets/images/profile.jpg';
-import Image from 'next/image';
-import { useEffect } from 'react';
 import Link from 'next/link';
 
-
 const Navbar = () => {
-  async function getData() {
-    try {
-      const res = await fetch(`/api`,  { next: { revalidate: 3600 } });
-      const data = await res.json();
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(()=>{
-    async function fetchData(){
-      const res = await getData();
-    };
-    fetchData();
-  },[])
   return (
     <nav className='navbar bg-body-tertiary fixed-top'>
       <div className='container-fluid'>
@@ -54,14 +33,6 @@ const Navbar = () => {
             ></button>
           </div>
           <div className='offcanvas-body'>
-            <Image
-              src={profile_img}
-              className='border border-dark'
-              width={200}
-              height={200}
-              alt='Nikhil Mahajan'
-              id='offcanvasNavbarLabel'
-            />
             <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
               <li
                 className='nav-item'
@@ -86,8 +57,36 @@ const Navbar = () => {
                 data-bs-dismiss='offcanvas'
                 aria-label='Close'
               >
+                <Link className='nav-link' href='/projects'>
+                  Projects
+                </Link>
+              </li>
+              <li
+                className='nav-item'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
+              >
                 <Link className='nav-link' href='/internships'>
                   Internships
+                </Link>
+              </li>
+              <li
+                className='nav-item'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
+              >
+                <Link className='nav-link' href='/experiences'>
+                  Experiences
+                </Link>
+              </li>
+
+              <li
+                className='nav-item'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
+              >
+                <Link className='nav-link' href='/blogs'>
+                  Blogs
                 </Link>
               </li>
             </ul>

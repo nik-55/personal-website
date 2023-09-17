@@ -1,12 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// core styles shared by all of react-notion-x (required)
-import 'react-notion-x/src/styles.css'
-// used for code syntax highlighting (optional)
-import 'prismjs/themes/prism-tomorrow.css'
-// used for rendering equations (optional)
-import 'katex/dist/katex.min.css'
+import 'react-notion-x/src/styles.css';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'katex/dist/katex.min.css';
 import './globals.css';
-import { Source_Code_Pro} from 'next/font/google';
+import { Source_Code_Pro } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import JsLoader from '@/components/JsLoader';
 
@@ -25,9 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <JsLoader />
         <Navbar />
-        <div style={{ marginTop: '100px' }}>{children}</div>
+        <div style={{ marginTop: '90px', padding: '10px' }}>{children}</div>
+        <JsLoader />
       </body>
     </html>
   );
