@@ -22,12 +22,15 @@ const page = async () => {
           >
             <h1>{post.title}</h1>
             <p>{post.description}</p>
-            <Link
-              target={post.external && '_blank'}
-              href={post.external ? post.external : `/blogs/${post.slug}`}
-            >
-              Read more
-            </Link>
+            {post.external ? (
+              <Link target={'_blank'} href={post.external}>
+                Read more
+              </Link>
+            ) : post.slug ? (
+              <Link href={`/blogs/${post.slug}`}>Read more</Link>
+            ) : (
+              ''
+            )}
           </div>
         );
       })}

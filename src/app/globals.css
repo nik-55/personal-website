@@ -24,7 +24,8 @@ body {
   z-index: 9999;
 }
 
-.blogs-container {
+.blogs-container,
+.projects-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 2em;
@@ -34,7 +35,8 @@ body {
 }
 
 @media only screen and (max-width: 860px) {
-  .blogs-container {
+  .blogs-container,
+  .projects-container {
     grid-template-columns: 1fr;
   }
 }

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import profile_img from '@/assets/images/profile.jpg';
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
@@ -24,16 +26,16 @@ const Navbar = () => {
           id='offcanvasNavbar'
           aria-labelledby='offcanvasNavbarLabel'
         >
-          <div className='offcanvas-header d-flex justify-content-end'>
-            <button
-              type='button'
-              className='btn-close'
-              data-bs-dismiss='offcanvas'
-              aria-label='Close'
-            ></button>
-          </div>
           <div className='offcanvas-body'>
-            <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
+            <Image
+              src={profile_img}
+              className='border border-dark rounded-circle'
+              width={140}
+              height={140}
+              alt='Nikhil Mahajan'
+              id='offcanvasNavbarLabel'
+            />
+            <ul className='navbar-nav mt-2 justify-content-end flex-grow-1 pe-3'>
               <li
                 className='nav-item'
                 data-bs-dismiss='offcanvas'
