@@ -1,8 +1,27 @@
+'use client';
 import profile_img from '@/assets/images/profile.jpg';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import Link from 'next/link';
 
+
 const Navbar = () => {
+  async function getData() {
+    try {
+      const res = await fetch(`/api`,  { next: { revalidate: 3600 } });
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(()=>{
+    async function fetchData(){
+      const res = await getData();
+    };
+    fetchData();
+  },[])
   return (
     <nav className='navbar bg-body-tertiary fixed-top'>
       <div className='container-fluid'>
