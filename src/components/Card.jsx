@@ -8,8 +8,6 @@ const Card = ({
   endpoint,
   linkText,
 }) => {
-  description =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.';
   return (
     <div
       className='card text-bg-light'
@@ -21,7 +19,7 @@ const Card = ({
           <h6 className='card-subtitle text-body-secondary'>{subtitle}</h6>
         )}
       </div>
-      <div className='card-body' style={{ overflowY: 'scroll' }}>
+      <div className='card-body' style={{ overflowY: 'auto' }}>
         <p className='card-text'>{description}</p>
       </div>
 
