@@ -6,7 +6,7 @@ const page = async () => {
 
   return (
     <div className='blogs-container'>
-      {data.map((ele, i) => {
+      {data.map((ele) => {
         const post = {
           id: ele.id,
           external: ele.properties.external.url,
