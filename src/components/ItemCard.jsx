@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Card = ({
+const ItemCard = ({
   title,
   subtitle,
   description,
@@ -38,4 +38,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default ItemCard;

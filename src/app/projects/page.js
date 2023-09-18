@@ -1,5 +1,5 @@
 import { notionDbQuery } from '@/services/notion';
-import Card from '@/components/Card';
+import ItemCard from '@/components/ItemCard';
 
 const page = async () => {
   const data = await notionDbQuery('projects');
@@ -15,7 +15,7 @@ const page = async () => {
           description: ele.properties.description.rich_text[0].plain_text,
         };
         return (
-          <Card
+          <ItemCard
             key={project.id}
             title={project.title}
             description={project.description}

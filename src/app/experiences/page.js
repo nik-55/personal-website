@@ -1,4 +1,4 @@
-import Card from '@/components/Card';
+import ItemCard from '@/components/ItemCard';
 import { notionDbQuery } from '@/services/notion';
 
 const page = async () => {
@@ -16,7 +16,7 @@ const page = async () => {
           org: ele.properties.org.rich_text[0].plain_text,
         };
         return (
-          <Card
+          <ItemCard
             key={experience.id}
             title={experience.org}
             subtitle={experience.role}
