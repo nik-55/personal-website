@@ -2,16 +2,17 @@ import NotionPage from '@/components/NotionPage';
 import { notionDbQuery } from '@/services/notion';
 import { dateTimeFormatter } from '@/utils/basicUtils';
 
-const page = async ({ params }) => {
-  const data = await notionDbQuery('projects', {
-    property: 'slug',
+const Highlights = async () => {
+  const data = await notionDbQuery('profile', {
+    property: 'tag',
     rich_text: {
-      equals: params.slug,
+      equals: 'highlights',
     },
   });
+
   const item = {
     id: data[0].id,
-    title: data[0].properties.title.rich_text[0].plain_text,
+    title: 'Highlights',
     last_edited_time: dateTimeFormatter(data[0].last_edited_time),
   };
 
@@ -26,4 +27,4 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default Highlights;

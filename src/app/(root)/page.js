@@ -1,5 +1,11 @@
+import Highlights from '@/components/Highlights';
+
 const page = () => {
-  return <>Home</>;
+  return (
+    <>
+      <Highlights />
+    </>
+  );
 };
 
 export default page;

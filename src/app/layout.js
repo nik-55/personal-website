@@ -18,7 +18,7 @@ export const metadata = {
   description: 'Nikhil Mahajan is a software engineer',
 };
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export default function RootLayout({ children }) {
   return (
