@@ -42,7 +42,7 @@ const Navbar = () => {
             <h5 className='offcanvas-title' id='offcanvasRightLabel'>
               Nikhil Mahajan
             </h5>
-            <span class='badge bg-secondary'>Software Developer</span>
+            <span className='badge bg-secondary'>Software Developer</span>
             <div className='w-50 d-flex justify-content-around'>
               <a href='https://google.com'>
                 <Image src={email} width={20} height={20} alt='email' />

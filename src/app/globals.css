@@ -28,7 +28,7 @@ body {
 .projects-container,
 .experiences-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 2em;
   column-gap: 2em;
   justify-items: center;

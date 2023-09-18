@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { notionDbQuery } from '@/services/notion';
+import Card from '@/components/Card';
 
 const page = async () => {
   const data = await notionDbQuery('projects');
@@ -15,23 +15,13 @@ const page = async () => {
           description: ele.properties.description.rich_text[0].plain_text,
         };
         return (
-          <div
+          <Card
             key={project.id}
-            style={{ width: '100%', height: '100px' }}
-            className='border border-secondary'
-          >
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
-            {project.external ? (
-              <Link target={'_blank'} href={project.external}>
-                Read more
-              </Link>
-            ) : project.slug ? (
-              <Link href={`/projects/${project.slug}`}>Read more</Link>
-            ) : (
-              ''
-            )}
-          </div>
+            title={project.title}
+            description={project.description}
+            external={project.external}
+            endpoint={`projects/${project.slug}`}
+          />
         );
       })}
     </div>

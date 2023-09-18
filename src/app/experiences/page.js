@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Card from '@/components/Card';
 import { notionDbQuery } from '@/services/notion';
 
 const page = async () => {
@@ -16,23 +16,14 @@ const page = async () => {
           org: ele.properties.org.rich_text[0].plain_text,
         };
         return (
-          <div
+          <Card
             key={experience.id}
-            style={{ width: '100%', height: '100px' }}
-            className='border border-secondary'
-          >
-            <h1>{experience.org}</h1>
-            <p>{experience.description}</p>
-            {experience.external ? (
-              <Link target={'_blank'} href={experience.external}>
-                Read more
-              </Link>
-            ) : experience.slug ? (
-              <Link href={`/experiences/${experience.slug}`}>Read more</Link>
-            ) : (
-              ''
-            )}
-          </div>
+            title={experience.org}
+            subtitle={experience.role}
+            description={experience.description}
+            external={experience.external}
+            endpoint={`experiences/${experience.slug}`}
+          />
         );
       })}
     </div>
