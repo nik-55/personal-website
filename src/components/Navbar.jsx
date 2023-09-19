@@ -123,7 +123,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='offcanvas-header p-0 d-flex flex-column border border-top'>
-            <small>Updated: Sep 2023</small>
+            <small>Views: 10</small>
           </div>
         </div>
       </div>

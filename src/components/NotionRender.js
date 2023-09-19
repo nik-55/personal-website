@@ -14,8 +14,9 @@ const Collection = dynamic(() =>
 
 export default function NotionRender({ recordMap }) {
   return (
-    <div className='bg-secondary'>
+    <div className='bg-light rounded-3'>
       <NotionRenderer
+        className='font-monospace'
         recordMap={recordMap}
         darkMode={false}
         components={{

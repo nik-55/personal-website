@@ -10,7 +10,7 @@ import JsLoader from '@/components/JsLoader';
 const inter = Source_Code_Pro({
   subsets: ['latin'],
   weight: '400',
-  style: 'italic',
+  style: 'normal',
 });
 
 export const metadata = {
