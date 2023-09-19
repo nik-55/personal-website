@@ -4,7 +4,7 @@ import Twitter from '@/components/Twitter';
 
 const page = () => {
   return (
-    <>
+    <div className='home-container'>
       <Highlights />
       <div className='mt-4'>
         <Twitter />
@@ -12,7 +12,7 @@ const page = () => {
       <div className='mt-4'>
         <Github />
       </div>
-    </>
+    </div>
   );
 };
 

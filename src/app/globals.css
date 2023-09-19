@@ -35,11 +35,20 @@ body {
   align-items: center;
 }
 
+.home-container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 860px) {
   .blogs-container,
   .projects-container,
   .experiences-container {
     grid-template-columns: 1fr;
+  }
+  .home-container {
+    width: 90%;
   }
 }
 

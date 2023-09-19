@@ -17,15 +17,17 @@ export default async function NotionPage({ id, title, time }) {
           style={{ overflowY: 'auto', maxHeight: '70vh' }}
         >
           <NotionRender recordMap={recordMap} />
-          <div className='mt-3'>
-            <small
-              href='#'
-              className='border border-dark rounded p-1'
-              target={'_blank'}
-            >
-              {time}
-            </small>
-          </div>
+          {time && (
+            <div className='mt-3'>
+              <small
+                href='#'
+                className='border border-dark rounded p-1'
+                target={'_blank'}
+              >
+                {time}
+              </small>
+            </div>
+          )}
         </div>
       </div>
     </div>
