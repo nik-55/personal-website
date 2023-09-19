@@ -42,6 +42,19 @@ body {
   margin-right: auto;
 }
 
+.itemcard .card-footer {
+  background: inherit;
+}
+
+.itemcard .card-header {
+  background: inherit;
+}
+
+.github-container a,
+.github-container span {
+  width: 30%;
+}
+
 @media only screen and (max-width: 860px) {
   .blogs-container,
   .projects-container,
@@ -51,6 +64,16 @@ body {
   .home-container,
   .about-container {
     width: 90%;
+  }
+
+  .github-container .list-group-item {
+    flex-direction: column;
+  }
+
+  .github-container a,
+  .github-container span {
+    width: 100%;
+    margin-top: 6px;
   }
 }
 
@@ -70,10 +93,11 @@ body {
   border-radius: 3px;
 }
 
-.itemcard .card-footer {
-  background: inherit;
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: auto;
 }
 
-.itemcard .card-header {
-  background: inherit;
+.horizontal-scrollbar:hover::-webkit-scrollbar {
+  height: 1.4px;
 }

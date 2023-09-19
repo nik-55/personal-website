@@ -2,7 +2,10 @@ import Link from 'next/link';
 
 const ItemCard = ({ title, description, external, endpoint, linkText }) => {
   return (
-    <div className='card itemcard' style={{ width: '100%', height: '14rem' }}>
+    <div
+      className='card itemcard border-dark'
+      style={{ width: '100%', height: '14rem' }}
+    >
       <div className='card-header'>
         <h5 className='card-title'>{title}</h5>
       </div>

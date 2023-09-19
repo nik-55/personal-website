@@ -13,7 +13,7 @@ const Twitter = () => {
         style={{ overflowY: 'auto', maxHeight: '70vh' }}
       >
         <p className='card-text'>
-          With supporting text below as a natural lead-in to additional content.
+          Things have changed a lot since... u know better 😉
         </p>
         <a href='#' target={'_blank'} className='btn btn-outline-info btn-sm'>
           Show all tweets

@@ -26,7 +26,7 @@ const Navbar = () => {
         >
           ls /
         </button>
-        <a className='navbar-brand' href='/'>
+        <a className='navbar-brand bg-white ps-1 pe-1 rounded-3' href='/'>
           Nikhil Mahajan
         </a>
         <div

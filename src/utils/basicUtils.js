@@ -1,6 +1,6 @@
 export function dateTimeFormatter(dateTimeString) {
   const dateFormater = new Intl.DateTimeFormat('en-In', {
-    month: 'long',
+    month: 'short',
     day: 'numeric',
     year: 'numeric',
   });

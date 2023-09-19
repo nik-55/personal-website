@@ -9,7 +9,7 @@ const page = () => {
       <div className='mt-4'>
         <Twitter />
       </div>
-      <div className='mt-4'>
+      <div className='mt-4 mb-2'>
         <Github />
       </div>
     </div>
