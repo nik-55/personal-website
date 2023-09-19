@@ -11,6 +11,7 @@ const Github = async ({ link }) => {
   let commits = [];
   data.items.forEach((item) => {
     commits.push({
+      id: item.sha,
       message: item.commit.message,
       url: item.html_url,
       date: item.commit.committer.date,
@@ -28,10 +29,13 @@ const Github = async ({ link }) => {
         className='card-body'
         style={{ overflowY: 'auto', maxHeight: '70vh' }}
       >
-        <div class='list-group list-group-flush'>
+        <div className='list-group list-group-flush'>
           {commits.map((commit) => {
             return (
-              <div class='d-flex border-bottom border-dark justify-content-between list-group-item list-group-item-action'>
+              <div
+                key={commit.id}
+                className='d-flex border-bottom border-dark justify-content-between list-group-item list-group-item-action'
+              >
                 <a
                   href={commit.url}
                   style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
