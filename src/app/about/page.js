@@ -49,10 +49,10 @@ const Highlights = async () => {
   });
 
   return (
-    <div>
+    <div className='about-container'>
       {items.map((item) => {
         return (
-          <div key={item.id} className='mb-3'>
+          <div key={item.id} className='mb-4'>
             <NotionPage id={item.id} title={item.title} />
           </div>
         );

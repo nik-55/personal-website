@@ -1,20 +1,10 @@
 import Link from 'next/link';
 
-const ItemCard = ({
-  title,
-  subtitle,
-  description,
-  external,
-  endpoint,
-  linkText,
-}) => {
+const ItemCard = ({ title, description, external, endpoint, linkText }) => {
   return (
     <div className='card itemcard' style={{ width: '100%', height: '14rem' }}>
       <div className='card-header'>
         <h5 className='card-title'>{title}</h5>
-        {subtitle && (
-          <h6 className='card-subtitle text-body-secondary'>{subtitle}</h6>
-        )}
       </div>
       <div className='card-body' style={{ overflowY: 'auto' }}>
         <p className='card-text'>{description}</p>

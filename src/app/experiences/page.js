@@ -19,7 +19,6 @@ const page = async () => {
           <ItemCard
             key={experience.id}
             title={experience.org}
-            subtitle={experience.role}
             description={experience.description}
             external={experience.external}
             endpoint={`experiences/${experience.slug}`}

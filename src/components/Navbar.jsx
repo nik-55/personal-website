@@ -8,17 +8,23 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className='navbar bg-body-tertiary fixed-top'>
+    <nav
+      className='navbar border-bottom border-dark fixed-top'
+      style={{
+        background:
+          'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
+      }}
+    >
       <div className='container-fluid'>
         <button
-          className='navbar-toggler'
+          className='ms-3 ps-2 pe-2 text-success bg-white rounded'
           type='button'
           data-bs-toggle='offcanvas'
           data-bs-target='#offcanvasNavbar'
           aria-controls='offcanvasNavbar'
           aria-label='Toggle navigation'
         >
-          <span className='navbar-toggler-icon'></span>
+          ls /
         </button>
         <a className='navbar-brand' href='/'>
           Nikhil Mahajan
