@@ -6,6 +6,7 @@ import './globals.css';
 import { Source_Code_Pro } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import JsLoader from '@/components/JsLoader';
+import { notionDbQuery } from '@/services/notion';
 
 const inter = Source_Code_Pro({
   subsets: ['latin'],
@@ -13,10 +14,22 @@ const inter = Source_Code_Pro({
   style: 'normal',
 });
 
-export const metadata = {
-  title: 'Nikhil Mahajan',
-  description: 'Nikhil Mahajan is a software engineer',
-};
+export async function generateMetadata() {
+  const data = await notionDbQuery('profile', {
+    property: 'tag',
+    rich_text: {
+      equals: 'profile',
+    },
+  });
+
+  const profile = {
+    name: data[0].properties.name.rich_text[0].plain_text,
+  };
+
+  return {
+    title: profile.name,
+  };
+}
 
 export const revalidate = 3600;
 

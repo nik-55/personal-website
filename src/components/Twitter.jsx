@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import twitter from '@/assets/icons/twitter-x.svg';
 
-const Twitter = () => {
+const Twitter = ({ link }) => {
   return (
     <div className='card border-info text-info'>
       <div className='card-header text-bg-info border-info'>
@@ -15,7 +15,11 @@ const Twitter = () => {
         <p className='card-text'>
           Things have changed a lot since... u know better 😉
         </p>
-        <a href='#' target={'_blank'} className='btn btn-outline-info btn-sm'>
+        <a
+          href={link}
+          target={'_blank'}
+          className='btn btn-outline-info btn-sm'
+        >
           Show all tweets
         </a>
       </div>

@@ -2,16 +2,17 @@ import Image from 'next/image';
 import github from '@/assets/icons/github.svg';
 import { dateTimeFormatter } from '@/utils/basicUtils';
 
-const Github = async () => {
+const Github = async ({ link }) => {
+  const username = link.split('https://github.com/')[1];
   const res = await fetch(
-    'https://api.github.com/search/commits?q=author:nik-55&sort=author-date&order=desc&per_page=10&page=1'
+    `https://api.github.com/search/commits?q=author:${username}&sort=author-date&order=desc&per_page=10&page=1`
   );
   const data = await res.json();
   let commits = [];
   data.items.forEach((item) => {
     commits.push({
       message: item.commit.message,
-      url: item.commit.url,
+      url: item.html_url,
       date: item.commit.committer.date,
       repoName: item.repository.full_name,
       repoUrl: item.repository.html_url,
@@ -62,7 +63,7 @@ const Github = async () => {
           })}
         </div>
         <a
-          href='#'
+          href={link}
           target={'_blank'}
           className='mt-3 btn btn-outline-success btn-sm'
         >

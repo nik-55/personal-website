@@ -5,8 +5,24 @@ import linkedin from '@/assets/icons/linkedin.svg';
 import github from '@/assets/icons/github.svg';
 import email from '@/assets/icons/email.svg';
 import Image from 'next/image';
+import { notionDbQuery } from '@/services/notion.js';
 
-const Navbar = () => {
+const Navbar = async () => {
+  const data = await notionDbQuery('profile', {
+    property: 'tag',
+    rich_text: {
+      equals: 'profile',
+    },
+  });
+
+  const profile = {
+    name: data[0].properties.name.rich_text[0].plain_text,
+    github: data[0].properties.github.url,
+    linkedin: data[0].properties.linkedin.url,
+    twitter: data[0].properties.twitter.url,
+    email: data[0].properties.email.email,
+  };
+
   return (
     <nav
       className='navbar border-bottom border-dark fixed-top'
@@ -27,7 +43,7 @@ const Navbar = () => {
           ls /
         </button>
         <a className='navbar-brand bg-white ps-1 pe-1 rounded-3' href='/'>
-          Nikhil Mahajan
+          {profile.name}
         </a>
         <div
           className='offcanvas offcanvas-start'
@@ -42,24 +58,24 @@ const Navbar = () => {
               className='border border-dark rounded-circle'
               width={140}
               height={140}
-              alt='Nikhil Mahajan'
+              alt={profile.name}
               id='offcanvasNavbarLabel'
             />
             <h5 className='offcanvas-title' id='offcanvasRightLabel'>
-              Nikhil Mahajan
+              {profile.name}
             </h5>
             <span className='badge bg-secondary'>Software Developer</span>
             <div className='w-50 d-flex justify-content-around'>
-              <a href='https://google.com'>
+              <a target={'_blank'} href={`mailto:${profile.email}`}>
                 <Image src={email} width={20} height={20} alt='email' />
               </a>
-              <a href='https://google.com'>
+              <a target={'_blank'} href={profile.twitter}>
                 <Image src={twitter} width={20} height={20} alt='twitter' />
               </a>
-              <a href='https://google.com'>
+              <a target={'_blank'} href={profile.github}>
                 <Image src={github} width={20} height={20} alt='github' />
               </a>
-              <a href='https://google.com'>
+              <a target={'_blank'} href={profile.linkedin}>
                 <Image src={linkedin} width={20} height={20} alt='linkedin' />
               </a>
             </div>

@@ -16,7 +16,7 @@ const page = async ({ params }) => {
   };
 
   return (
-    <div>
+    <div className='w-75 mx-auto'>
       <NotionPage
         id={item.id}
         title={item.title}
