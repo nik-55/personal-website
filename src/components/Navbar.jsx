@@ -106,20 +106,6 @@ const Navbar = () => {
                   Blogs
                 </Link>
               </li>
-
-              <li
-                className='nav-item'
-                data-bs-dismiss='offcanvas'
-                aria-label='Close'
-              >
-                <a
-                  className='nav-link'
-                  target={'_blank'}
-                  href='https://github.com/nik-55'
-                >
-                  Resume
-                </a>
-              </li>
             </ul>
           </div>
           <div className='offcanvas-header p-0 d-flex flex-column border border-top'>

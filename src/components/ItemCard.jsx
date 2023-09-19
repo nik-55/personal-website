@@ -9,10 +9,7 @@ const ItemCard = ({
   linkText,
 }) => {
   return (
-    <div
-      className='card text-bg-light'
-      style={{ width: '100%', height: '14rem' }}
-    >
+    <div className='card itemcard' style={{ width: '100%', height: '14rem' }}>
       <div className='card-header'>
         <h5 className='card-title'>{title}</h5>
         {subtitle && (
@@ -25,11 +22,15 @@ const ItemCard = ({
 
       <div className='card-footer'>
         {external ? (
-          <Link className='card-link' target={'_blank'} href={external}>
+          <Link
+            className='btn btn-outline-info btn-sm'
+            target={'_blank'}
+            href={external}
+          >
             {linkText || 'Read more'}
           </Link>
         ) : (
-          <Link className='card-link' href={endpoint}>
+          <Link className='btn btn-outline-info btn-sm' href={endpoint}>
             {linkText || 'Read more'}
           </Link>
         )}

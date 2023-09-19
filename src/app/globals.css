@@ -58,3 +58,11 @@ body {
   background: #888;
   border-radius: 3px;
 }
+
+.itemcard .card-footer {
+  background: inherit;
+}
+
+.itemcard .card-header {
+  background: inherit;
+}

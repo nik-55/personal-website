@@ -6,7 +6,10 @@ export default async function NotionPage({ id, title, time }) {
   return (
     <div>
       <div className='card border-dark text-dark'>
-        <div className='card-header border-dark text-bg-dark'>
+        <div
+          className='card-header border-dark'
+          style={{ background: 'inherit' }}
+        >
           <h5 className='card-title'>{title}</h5>
         </div>
         <div
