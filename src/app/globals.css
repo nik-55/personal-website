@@ -55,6 +55,14 @@ body {
   width: 30%;
 }
 
+.project-container,
+.blog-container,
+.experience-container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 860px) {
   .blogs-container,
   .projects-container,
@@ -62,7 +70,10 @@ body {
     grid-template-columns: 1fr;
   }
   .home-container,
-  .about-container {
+  .about-container,
+  .project-container,
+  .blog-container,
+  .experience-container {
     width: 90%;
   }
 
