@@ -1,3 +1,10 @@
+/**
+ * @file contains the rendered notion component along with other components in a card format
+ * Header --> Title
+ * Body --> Rendered Notion Page
+ * Footer --> Time [optional]
+ */
+
 import { notionpage } from '@/services/notion';
 import NotionRender from './NotionRender';
 

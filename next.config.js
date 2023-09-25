@@ -1,10 +1,13 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ * @file contains the next.js configuration
+ */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '*',
+        hostname: '*', // Match all domains as there is no security risk involved
       },
     ],
   },

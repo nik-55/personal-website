@@ -1,4 +1,4 @@
-import NotionPage from '@/components/NotionPage';
+import NotionPage from '@/components/notion/NotionPage';
 import { notionDbQuery } from '@/services/notion';
 
 const Highlights = async () => {

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,9 +12,6 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
-    "bootstrap": "^5.3.1",
-    "eslint": "8.48.0",
-    "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "notion-client": "^6.16.0",
     "react": "18.2.0",
@@ -22,6 +19,9 @@
     "react-notion-x": "^6.16.0"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.2",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^13.5.3",
     "eslint-config-prettier": "^9.0.0",
     "prettier": "3.0.3"
   }

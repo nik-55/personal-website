@@ -1,6 +1,14 @@
+/**
+ * @file contains the NotionRender component which renders the Notion page using recordMap
+ */
+
 'use client';
 import { NotionRenderer } from 'react-notion-x';
 import dynamic from 'next/dynamic';
+
+/**
+ * Imports of code and collection markdown support for rendering
+ */
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then((m) => m.Code)

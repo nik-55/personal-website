@@ -1,3 +1,5 @@
+/* Styles have been added carelessly, please refactor them as per your need. */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,12 +13,13 @@ body {
   background-color: white;
 }
 
+/* Loading screen overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  bottom: 0;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -24,6 +27,7 @@ body {
   z-index: 9999;
 }
 
+/* blogs, projects, experiences page styles */
 .blogs-container,
 .projects-container,
 .experiences-container {
@@ -35,6 +39,7 @@ body {
   align-items: center;
 }
 
+/* home, about page styles */
 .home-container,
 .about-container {
   width: 75%;
@@ -42,14 +47,7 @@ body {
   margin-right: auto;
 }
 
-.itemcard .card-footer {
-  background: inherit;
-}
-
-.itemcard .card-header {
-  background: inherit;
-}
-
+/* Styles for blogs/blogs-post-1, projects/project-1, experiences/experience page */
 .project-container,
 .blog-container,
 .experience-container {
@@ -62,6 +60,18 @@ body {
   max-width: 70%;
 }
 
+/* region Custom cards */
+.itemcard .card-footer {
+  background: inherit;
+}
+
+.itemcard .card-header {
+  background: inherit;
+}
+
+/* endregion Custom cards */
+
+/* Styles for mobile view */
 @media only screen and (max-width: 860px) {
   .blogs-container,
   .projects-container,
@@ -93,6 +103,8 @@ body {
   }
 }
 
+/* region Scrollbar */
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -117,3 +129,5 @@ body {
 .horizontal-scrollbar:hover::-webkit-scrollbar {
   height: 1.4px;
 }
+
+/* endregion Scrollbar */
