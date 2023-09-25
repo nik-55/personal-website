@@ -15,7 +15,7 @@ const Github = async ({ link }) => {
       message: item.commit.message,
       url: item.html_url,
       date: item.commit.committer.date,
-      repoName: item.repository.full_name,
+      repoName: item.repository.name,
       repoUrl: item.repository.html_url,
     });
   });
@@ -34,34 +34,40 @@ const Github = async ({ link }) => {
             return (
               <div
                 key={commit.id}
-                className='d-flex border-bottom border-dark justify-content-between list-group-item list-group-item-action'
+                className='d-flex flex-column border-bottom border-dark list-group-item list-group-item-action'
               >
                 <a
                   href={commit.url}
-                  style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
-                  className='horizontal-scrollbar p-1 border rounded'
-                  target={'_blank'}
-                >
-                  {commit.message}
-                </a>
-                <a
-                  className='horizontal-scrollbar p-1 border rounded'
                   style={{
                     whiteSpace: 'nowrap',
                     overflowX: 'auto',
                     textDecoration: 'none',
                   }}
-                  href={commit.repoUrl}
+                  className='horizontal-scrollbar p-1 text-success'
                   target={'_blank'}
                 >
-                  {commit.repoName}
+                  {commit.message}
                 </a>
-                <span
-                  className='horizontal-scrollbar p-1 border rounded'
-                  style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
-                >
-                  {dateTimeFormatter(commit.date)}
-                </span>
+                <div className='d-flex github-item-footer mt-1 justify-content-between'>
+                  <a
+                    className='flex-grow-1 horizontal-scrollbar p-1 text-dark'
+                    style={{
+                      whiteSpace: 'nowrap',
+                      overflowX: 'auto',
+                      textDecoration: 'none',
+                    }}
+                    href={commit.repoUrl}
+                    target={'_blank'}
+                  >
+                    {commit.repoName}
+                  </a>
+                  <span
+                    className='horizontal-scrollbar p-1 border rounded'
+                    style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
+                  >
+                    {dateTimeFormatter(commit.date)}
+                  </span>
+                </div>
               </div>
             );
           })}

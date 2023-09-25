@@ -50,17 +50,16 @@ body {
   background: inherit;
 }
 
-.github-container a,
-.github-container span {
-  width: 30%;
-}
-
 .project-container,
 .blog-container,
 .experience-container {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.github-container .github-item-footer a {
+  max-width: 70%;
 }
 
 @media only screen and (max-width: 860px) {
@@ -81,10 +80,16 @@ body {
     flex-direction: column;
   }
 
-  .github-container a,
-  .github-container span {
-    width: 100%;
+  .github-container .github-item-footer {
+    flex-direction: column;
+  }
+
+  .github-container .github-item-footer span {
     margin-top: 6px;
+  }
+
+  .github-container .github-item-footer a {
+    max-width: 100%;
   }
 }
 

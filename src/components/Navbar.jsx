@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import profile_img from '@/assets/images/profile.jpg';
 import twitter from '@/assets/icons/twitter-x.svg';
 import linkedin from '@/assets/icons/linkedin.svg';
 import github from '@/assets/icons/github.svg';
@@ -21,6 +20,7 @@ const Navbar = async () => {
     linkedin: data[0].properties.linkedin.url,
     twitter: data[0].properties.twitter.url,
     email: data[0].properties.email.email,
+    profile_img: data[0].properties.image.files[0].file.url,
   };
 
   return (
@@ -54,7 +54,7 @@ const Navbar = async () => {
         >
           <div className='offcanvas-header p-2 border border-bottom d-flex flex-column'>
             <Image
-              src={profile_img}
+              src={profile.profile_img}
               className='border border-dark rounded-circle'
               width={140}
               height={140}
@@ -129,9 +129,6 @@ const Navbar = async () => {
                 </Link>
               </li>
             </ul>
-          </div>
-          <div className='offcanvas-header p-0 d-flex flex-column border border-top'>
-            <small>Views: 10</small>
           </div>
         </div>
       </div>
