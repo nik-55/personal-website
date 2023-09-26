@@ -5,6 +5,8 @@
 'use client';
 import { NotionRenderer } from 'react-notion-x';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * Imports of code and collection markdown support for rendering
@@ -22,14 +24,15 @@ const Collection = dynamic(() =>
 
 export default function NotionRender({ recordMap }) {
   return (
-    <div className='bg-light rounded-3'>
+    <div>
       <NotionRenderer
-        className='font-monospace'
         recordMap={recordMap}
         darkMode={false}
         components={{
           Code,
           Collection,
+          nextImage: Image,
+          nextLink: Link,
         }}
       />
     </div>
