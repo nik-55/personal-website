@@ -13,6 +13,11 @@ body {
   background-color: white;
 }
 
+a:hover,
+.nav-link:hover {
+  cursor: pointer;
+}
+
 /* Loading screen overlay */
 .overlay {
   position: fixed;

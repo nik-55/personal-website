@@ -8,7 +8,7 @@ import '@/styles/globals.css';
 // Other imports
 import { Source_Code_Pro } from 'next/font/google';
 import { notionDbQuery } from '@/services/notion';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/navbar';
 import JsLoader from '@/components/JsLoader';
 
 // Load font for the application
@@ -24,7 +24,7 @@ const inter = Source_Code_Pro({
  */
 export async function generateMetadata() {
   try {
-    const data = await notionDbQuery('profil', {
+    const data = await notionDbQuery('profile', {
       property: 'tag',
       rich_text: {
         equals: 'profile',

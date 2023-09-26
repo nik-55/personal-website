@@ -1,28 +1,13 @@
-import Link from 'next/link';
+'use client';
 import twitter from '@/assets/icons/twitter-x.svg';
 import linkedin from '@/assets/icons/linkedin.svg';
 import github from '@/assets/icons/github.svg';
 import email from '@/assets/icons/email.svg';
 import Image from 'next/image';
-import { notionDbQuery } from '@/services/notion.js';
+import { useRouter } from 'next/navigation';
 
-const Navbar = async () => {
-  const data = await notionDbQuery('profile', {
-    property: 'tag',
-    rich_text: {
-      equals: 'profile',
-    },
-  });
-
-  const profile = {
-    name: data[0].properties.name.rich_text[0].plain_text,
-    github: data[0].properties.github.url,
-    linkedin: data[0].properties.linkedin.url,
-    twitter: data[0].properties.twitter.url,
-    email: data[0].properties.email.email,
-    profile_img: data[0].properties.image.files[0].file.url,
-  };
-
+const Offcanvas = ({ profile }) => {
+  const router = useRouter();
   return (
     <nav
       className='navbar border-bottom border-dark fixed-top'
@@ -83,50 +68,45 @@ const Navbar = async () => {
           <div className='offcanvas-body'>
             <ul className='navbar-nav justify-content-end flex-grow-1 p-0'>
               <li
-                className='nav-item'
+                className='nav-item nav-link'
                 data-bs-dismiss='offcanvas'
+                onClick={() => router.push('/')}
                 aria-label='Close'
               >
-                <Link className='nav-link active' aria-current='page' href='/'>
-                  Home
-                </Link>
+                Home
               </li>
               <li
-                className='nav-item'
+                className='nav-item nav-link'
                 data-bs-dismiss='offcanvas'
+                onClick={() => router.push('/about')}
                 aria-label='Close'
               >
-                <Link className='nav-link' href='/about'>
-                  About
-                </Link>
+                About
               </li>
               <li
-                className='nav-item'
+                className='nav-item nav-link'
                 data-bs-dismiss='offcanvas'
+                onClick={() => router.push('/projects')}
                 aria-label='Close'
               >
-                <Link className='nav-link' href='/projects'>
-                  Projects
-                </Link>
+                Projects
               </li>
               <li
-                className='nav-item'
+                className='nav-item nav-link'
                 data-bs-dismiss='offcanvas'
+                onClick={() => router.push('/experiences')}
                 aria-label='Close'
               >
-                <Link className='nav-link' href='/experiences'>
-                  Experiences
-                </Link>
+                Experiences
               </li>
 
               <li
-                className='nav-item'
+                className='nav-item nav-link'
                 data-bs-dismiss='offcanvas'
+                onClick={() => router.push('/blogs')}
                 aria-label='Close'
               >
-                <Link className='nav-link' href='/blogs'>
-                  Blogs
-                </Link>
+                Blogs
               </li>
             </ul>
           </div>
@@ -136,4 +116,4 @@ const Navbar = async () => {
   );
 };
 
-export default Navbar;
+export default Offcanvas;
