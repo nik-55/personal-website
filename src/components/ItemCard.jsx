@@ -1,3 +1,11 @@
+/**
+ * @file contains the ItemCard component
+ *
+ * Header: Title
+ * Body: Description
+ * Footer: Link to more info [either external links or in app links]
+ */
+
 import Link from 'next/link';
 
 const ItemCard = ({ title, description, external, endpoint, linkText }) => {

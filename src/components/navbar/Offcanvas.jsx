@@ -1,3 +1,7 @@
+/**
+ * @file contains the offcanvas component displaying the profile data
+ */
+
 'use client';
 import twitter from '@/assets/icons/twitter-x.svg';
 import linkedin from '@/assets/icons/linkedin.svg';

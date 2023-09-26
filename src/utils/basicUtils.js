@@ -17,7 +17,7 @@ export function dateTimeFormatter(dateTimeString) {
     });
 
     return dateFormater.format(new Date(dateTimeString));
-  } catch (e) {
+  } catch (err) {
     return 'Invalid Date';
   }
 }

@@ -1,3 +1,10 @@
+/**
+ * @file contains:
+ * - Few words about me
+ * - Education
+ * - Skills
+ */
+
 import NotionPage from '@/components/notion/NotionPage';
 import { notionDbQuery } from '@/services/notion';
 

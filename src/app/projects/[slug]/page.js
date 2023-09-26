@@ -1,3 +1,10 @@
+/**
+ * @file contains:
+ * - Header: title
+ * - Body: notion rendered page
+ * - Footer: last edited time
+ */
+
 import NotionPage from '@/components/notion/NotionPage';
 import { notionDbQuery } from '@/services/notion';
 import { dateTimeFormatter } from '@/utils/basicUtils';

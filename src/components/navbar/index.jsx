@@ -1,7 +1,14 @@
+/**
+ * @file fetches the profile data from Notion and renders the Offcanvas component
+ */
+
 import { notionDbQuery } from '@/services/notion.js';
 import Offcanvas from './Offcanvas';
+import ComponentError from '../ComponentError';
 
 const Navbar = async () => {
+  let error = null,
+    profile = null;
   try {
     const data = await notionDbQuery('profile', {
       property: 'tag',
@@ -10,7 +17,7 @@ const Navbar = async () => {
       },
     });
 
-    const profile = {
+    profile = {
       name: data[0].properties.name.rich_text[0].plain_text,
       github: data[0].properties.github.url,
       linkedin: data[0].properties.linkedin.url,
@@ -18,15 +25,19 @@ const Navbar = async () => {
       email: data[0].properties.email.email,
       profile_img: data[0].properties.image.files[0].file.url,
     };
-
-    return (
-      <>
-        <Offcanvas profile={profile} />
-      </>
-    );
-  } catch (error) {
-    return <>Error loading profile...</>;
+  } catch (err) {
+    error = 'Error occured while fetching profile';
   }
+
+  return (
+    <>
+      {error ? (
+        <ComponentError error={error} />
+      ) : (
+        <Offcanvas profile={profile} />
+      )}
+    </>
+  );
 };
 
 export default Navbar;

@@ -1,3 +1,7 @@
+/**
+ * @file contains the experience cards
+ */
+
 import ItemCard from '@/components/ItemCard';
 import { notionDbQuery } from '@/services/notion';
 

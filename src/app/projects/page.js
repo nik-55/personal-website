@@ -1,3 +1,7 @@
+/**
+ * @file contains the project cards
+ */
+
 import { notionDbQuery } from '@/services/notion';
 import ItemCard from '@/components/ItemCard';
 

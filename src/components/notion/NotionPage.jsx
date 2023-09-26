@@ -7,9 +7,16 @@
 
 import { notionpage } from '@/services/notion';
 import NotionRender from './NotionRender';
+import ComponentError from '../ComponentError';
 
 export default async function NotionPage({ id, title, time }) {
-  const recordMap = await notionpage(id);
+  let recordMap = null,
+    error = null;
+  try {
+    recordMap = await notionpage(id);
+  } catch (err) {
+    error = 'Error occured while fetching highlights';
+  }
   return (
     <div>
       <div className='card border-dark text-dark'>
@@ -23,17 +30,23 @@ export default async function NotionPage({ id, title, time }) {
           className='card-body'
           style={{ overflowY: 'auto', maxHeight: '70vh' }}
         >
-          <NotionRender recordMap={recordMap} />
-          {time && (
-            <div className='mt-3'>
-              <small
-                href='#'
-                className='border border-dark rounded p-1'
-                target={'_blank'}
-              >
-                {time}
-              </small>
-            </div>
+          {error ? (
+            <ComponentError error={error} />
+          ) : (
+            <>
+              <NotionRender recordMap={recordMap} />
+              {time && (
+                <div className='mt-3'>
+                  <small
+                    href='#'
+                    className='border border-dark rounded p-1'
+                    target={'_blank'}
+                  >
+                    {time}
+                  </small>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

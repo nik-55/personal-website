@@ -1,3 +1,7 @@
+/**
+ * Workaround to import bootstrap js bundle
+ */
+
 'use client';
 import { useEffect } from 'react';
 
